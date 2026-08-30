@@ -13,8 +13,5 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@11.24.0",
-  "workspaces": [
-    "packages/*"
-  ]
+  "packageManager": "pnpm@11.24.0"
 }

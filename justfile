@@ -4,4 +4,4 @@ add-ui +component:
 
 [working-directory: 'examples/react']
 dev args='':
-    bun dev {{ args }}
+    pnpm dev {{ args }}
