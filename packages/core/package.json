@@ -1,0 +1,48 @@
+{
+  "name": "@trekscripts/core",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./query": {
+      "types": {
+        "import": "./dist/query.d.ts",
+        "require": "./dist/query.d.cts"
+      },
+      "import": "./dist/query.js",
+      "require": "./dist/query.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "tsdown": "^0.22.14"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.3",
+    "jsdom": "^30.0.1",
+    "react-dom": "catalog:",
+    "vitest": "^4.1.11"
+  },
+  "peerDependencies": {
+    "class-variance-authority": "^0.7.1",
+    "radix-ui": "^1.6.7",
+    "react": "catalog:"
+  }
+}

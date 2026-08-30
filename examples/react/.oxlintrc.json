@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc", "jsx-a11y", "import"],
+  "rules": {
+    // === Tailwind & String Manipulation Helpers ===
+    "unicorn/no-abusive-eslint-disable": "error",
+    "no-template-curly-in-string": "error",
+
+    // === React & ClassName Safety ===
+    "react/jsx-curly-brace-presence": ["warn", { "props": "never", "children": "never" }],
+
+    // === React & Hooks Rules ===
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }],
+    "react/jsx-key": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-array-index-key": "warn",
+
+    // === TypeScript Strictness ===
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "typescript/no-non-null-assertion": "warn",
+    "typescript/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+
+    // === Imports & Module Resolution ===
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error",
+
+    // === Modern JS / Performance (OXC Core) ===
+    "oxc/no-accumulating-spread": "error",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "eqeqeq": ["error", "always"],
+    "no-var": "error",
+    "prefer-const": "error"
+  }
+}

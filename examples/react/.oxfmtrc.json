@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "sortImports": {
+    "enabled": true,
+    "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+  },
+  "sortTailwindcss": {
+    "enabled": true,
+    "callees": ["cn", "clsx", "cva", "twMerge"]
+  }
+}

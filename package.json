@@ -1,0 +1,20 @@
+{
+  "name": "trek-core",
+  "version": "0.0.0",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.24.0",
+  "workspaces": [
+    "packages/*"
+  ]
+}
