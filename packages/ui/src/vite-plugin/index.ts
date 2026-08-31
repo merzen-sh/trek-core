@@ -8,8 +8,13 @@ export function trek(): Plugin {
     import.meta.resolve("@trekscripts/ui/theme.css")
   );
 
+  let outDir = "dist";
+
   return {
     name: "trek-plugin",
+    configResolved(config) {
+      outDir = config.build.outDir || "dist";
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.url === "/theme.css") {
@@ -25,9 +30,9 @@ export function trek(): Plugin {
         return;
       }
 
-      const outDir = path.resolve(process.cwd(), "dist");
-      if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-      fs.copyFileSync(themePath, path.resolve(outDir, "theme.css"));
+      const resolvedOutDir = path.resolve(process.cwd(), outDir);
+      if (!fs.existsSync(resolvedOutDir)) fs.mkdirSync(resolvedOutDir, { recursive: true });
+      fs.copyFileSync(themePath, path.resolve(resolvedOutDir, "theme.css"));
     },
   };
 }
