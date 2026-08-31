@@ -7,9 +7,7 @@ interface AliasRule {
   replace: string;
 }
 
-const UI_DIR: string = path.resolve(
-  "src/components/ui"
-);
+const UI_DIR: string = path.resolve("src/components/ui");
 
 if (!fs.existsSync(UI_DIR)) {
   console.error(`Error: Directory not found: ${UI_DIR}`);
@@ -59,7 +57,7 @@ function replaceAliases(filePath: string): number {
         return `${statement} ${quote}${relativePath}${quote}`;
       }
       return match;
-    }
+    },
   );
 
   if (count > 0) {
@@ -74,6 +72,4 @@ for (const file of TSX_FILES) {
   updatedFilesCount += replaceAliases(file);
 }
 
-console.log(
-  `\nSummary: Updated ${updatedFilesCount} / ${TSX_FILES.length} files.`
-);
+console.log(`\nSummary: Updated ${updatedFilesCount} / ${TSX_FILES.length} files.`);

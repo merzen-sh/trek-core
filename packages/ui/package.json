@@ -1,10 +1,10 @@
 {
   "name": "@trekscripts/ui",
   "version": "0.1.2",
-  "type": "module",
   "files": [
     "dist"
   ],
+  "type": "module",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "exports": {

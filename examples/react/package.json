@@ -10,7 +10,7 @@
     "fmt": "oxfmt",
     "preview": "vite preview"
   },
-"dependencies": {
+  "dependencies": {
     "@trekscripts/core": "workspace:*",
     "@trekscripts/ui": "workspace:*",
     "react": "^19.2.8",
