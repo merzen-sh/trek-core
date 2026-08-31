@@ -5,5 +5,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), trekPlugin()],
-  build: { rolldownOptions: { treeshake: true } },
+  build: { rolldownOptions: { treeshake: true },outDir: "../ui" },
 });
