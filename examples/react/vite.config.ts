@@ -6,4 +6,10 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), tailwindcss(), trekPlugin()],
   build: { rolldownOptions: { treeshake: true },outDir: "../ui" },
+  // for WSL HMR
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 });
