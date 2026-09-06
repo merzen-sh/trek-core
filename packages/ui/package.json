@@ -1,19 +1,40 @@
 {
   "name": "@trekscripts/ui",
-  "version": "0.1.3",
+  "version": "0.1.4",
+  "license": "ISC",
   "files": [
-    "src",
+    "dist",
     "theme.css",
     "globals.css"
   ],
   "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
     "./globals.css": "./globals.css",
     "./theme.css": "./theme.css",
-    "./vite-plugin": "./src/vite-plugin/index.ts"
+    "./vite-plugin": {
+      "types": {
+        "import": "./dist/vite-plugin.d.ts"
+      },
+      "import": "./dist/vite-plugin.js",
+      "default": "./dist/vite-plugin.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -21,14 +42,13 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "date-fns": "^4.4.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.5.0",
     "next-themes": "^0.4.6",
     "radix-ui": "^1.6.7",
     "react-day-picker": "^10.0.1",
     "react-resizable-panels": "^4.12.3",
-    "recharts": "3.8.0",
+    "recharts": "^3.8.0",
     "sonner": "^2.0.8",
     "vaul": "^1.1.2"
   },
@@ -40,6 +60,7 @@
   "peerDependencies": {
     "lucide-react": "catalog:",
     "react": "catalog:",
+    "react-dom": "catalog:",
     "vite": "catalog:"
   }
 }

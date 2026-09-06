@@ -18,9 +18,9 @@ publish_package() {
       printf 'Skipping build for %s\n' "$package_dir"
     fi
 
-    pnpm publish --no-git-check
+    pnpm publish --no-git-checks
   )
 }
 
 publish_package "packages/core"
-publish_package "packages/ui" true
+publish_package "packages/ui"

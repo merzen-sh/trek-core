@@ -30,5 +30,8 @@
     "typescript": "~6.0.2",
     "vite": "^8.2.2",
     "vite-tsconfig-paths": "^6.1.1"
-  }
+  },
+  "browserslist": [
+    "chrome >= 103"
+  ]
 }
